@@ -1,1 +1,36 @@
 @import "tailwindcss";
+@layer utilities {
+  /* 🌤 Custom scrollbar for modal */
+  .weather-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .weather-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .weather-scrollbar::-webkit-scrollbar-thumb {
+    background: #4FCED5;
+    border-radius: 10px;
+  }
+
+  .weather-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #2dd4da;
+  }
+}
+.hourly-scrollbar::-webkit-scrollbar {
+  height: 4px; /* 👈 smaller horizontal scrollbar */
+}
+
+.hourly-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hourly-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(79, 206, 213, 0.6);
+  border-radius: 999px;
+}
+
+.hourly-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #4FCED5;
+}

@@ -11,15 +11,15 @@ interface weatherMain {
 }
 interface hourlyForecastData {
   dt_txt: Date;
-  weather:weatherDes[];
-  main:weatherMain
+  weather: weatherDes[];
+  main: weatherMain
 }
 const HourlyForecast = ({ data }: { data: hourlyForecastData[] }) => {
   return (
     <div className="mt-6 w-full mx-auto">
       <h2 className="text-xl font-bold  text-[#4FCED5] ">Next 24 Hours</h2>
-      <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-[#4FCED5]/70 scrollbar-track-gray-300">
-        <div className="flex gap-4 justify-between my-3">
+      <div className="overflow-x-auto mt-4 hourly-scrollbar">
+        <div className="flex gap-4 justify-between my-3 py-4">
           {data.map((item, index) => {
             const time = new Date(item.dt_txt).toLocaleTimeString(undefined, {
               hour: "numeric",
@@ -28,11 +28,11 @@ const HourlyForecast = ({ data }: { data: hourlyForecastData[] }) => {
 
             return (
               <motion.div
-               initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
                 key={index}
-                className="bg-[#1E293B] hover:shadow-[#4FCED5] transition-all rounded-lg p-4 min-w-[100px] text-center text-white shadow-md"
+                className="bg-[#1E293B] hover:scale-105 border-[#4FCED5] border-2 transition-all rounded-lg p-4 min-w-[100px] text-center text-white shadow-md"
               >
                 <p className="text-sm text-[#4FCED5]">{time}</p>
                 <img

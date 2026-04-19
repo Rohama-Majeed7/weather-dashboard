@@ -19,7 +19,7 @@ const ForecastCard = ({ data }: { data: dailyForecastData[] }) => {
     <div className="w-full ">
       <h2 className="text-xl font-bold  text-[#4FCED5] my-3">Next 5 Days</h2>
 
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] justify-center w-full gap-2 mx-auto">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] justify-center py-4 w-full gap-4 mx-auto">
         {data.map((forecast, idx) => {
           const date = new Date(forecast.dt_txt).toLocaleDateString(undefined, {
             weekday: "short",
@@ -32,7 +32,7 @@ const ForecastCard = ({ data }: { data: dailyForecastData[] }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               key={idx}
-              className="bg-[#273549] transition-all hover:shadow-[#4FCED5] shadow-md rounded-lg p-4 text-center "
+              className="bg-[#273549] transition-all border-[#4FCED5] border-2 hover:scale-105 rounded-lg p-4 text-center "
             >
               <h3 className="text-lg font-semibold text-[#4FCED5]">{date}</h3>
               <img
